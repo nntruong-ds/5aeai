@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Tìm Kiếm</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body data-theme="dark"> <div class="container">
+    
+    <header class="header">
+      <h1>Gerporkit</h1>
+      <div class="header-actions">
+        <button id="themeToggle" class="icon-btn">☀️</button> <button id="clearBtn" class="icon-btn">🗑️</button> </div>
+    </header>
+
+    <main id="chatBox" class="chat-container">
+      </main>
+
+    <footer class="input-wrapper">
+      <div id="imagePreview" class="image-preview"></div>
+      
+      <div class="input-container">
+        <label class="attach-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+          </svg>
+          <input type="file" id="imageUpload" accept="image/*" multiple />
+        </label>
+
+        <textarea 
+          id="queryInput" 
+          placeholder="Hỏi tôi bất kỳ điều gì..." 
+          rows="1"
+        ></textarea>
+
+        <button id="sendBtn" class="send-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+          </svg>
+        </button>
+      </div>
+      <p class="hint">Nhấn Enter để gửi (Shift+Enter để xuống dòng) • Dán ảnh từ clipboard</p>
+    </footer>
+  </div>
+
+  <div id="lightbox" class="lightbox">
+    <span id="lightboxClose" class="lightbox-close">&times;</span>
+    <img id="lightboxImg" class="lightbox-content">
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked@5.0.0/marked.min.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

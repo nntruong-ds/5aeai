@@ -1,0 +1,19 @@
+# Bỏ qua thư mục môi trường ảo
+venv/
+env/
+.env
+
+# Bỏ qua file cache của Python
+__pycache__/
+*.pyc
+
+# Bỏ qua các file ảnh người dùng upload (chỉ giữ thư mục, không giữ file)
+static/uploads/*
+!static/uploads/.gitkeep
+
+# Bỏ qua file hệ thống
+.DS_Store
+Thumbs.db
+
+# Bỏ qua file cấu hình IDE (nếu dùng VS Code)
+.vscode/
